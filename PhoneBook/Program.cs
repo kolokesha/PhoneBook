@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICountriesService, CountriesService>();
@@ -11,7 +12,7 @@ builder.Services.AddScoped<IPersonService, PersonsService>();
 
 builder.Services.AddDbContext<PhoneBookDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 var app = builder.Build();
 

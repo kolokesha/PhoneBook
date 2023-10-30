@@ -111,7 +111,7 @@ public class PersonsController : Controller
 
         if (ModelState.IsValid)
         {
-            _personsService.UpdatePerson(personUpdateRequest);
+            await _personsService.UpdatePerson(personUpdateRequest);
             return RedirectToAction("Index");
         }
 
