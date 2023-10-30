@@ -1,23 +1,54 @@
-﻿services:
+﻿#services:
+#  phonebook:
+#    image: phonebook
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#  db:
+#      image: mysql:8.0.33
+#      container_name: mysql
+#      restart: always
+#      volumes:
+#        - mysql:/var/lib/mysql
+#      environment:
+#        MYSQL_DATABASE: db
+#        MYSQL_ROOT_PASSWORD: kolokesha13031997
+#        MYSQL_USER: sa
+#        MYSQL_PASSWORD: kolokesha13031997
+#      ports:
+#        - "8004:3306"
+#      command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
+#      networks:
+#        - app-net
+
+version: "3.9"
+networks:
   phonebook:
-    image: phonebook
+    driver: bridge
+services:
+  app:
+    container_name: phonebook
     build:
       context: .
       dockerfile: Dockerfile
-  db:
-      image: mysql:8.0.33
-      container_name: mysql
-      restart: always
-      volumes:
-        - mysql:/var/lib/mysql
-      environment:
-        MYSQL_DATABASE: db
-        MYSQL_ROOT_PASSWORD: kolokesha13031997
-        MYSQL_USER: sa
-        MYSQL_PASSWORD: kolokesha13031997
-      ports:
-        - "8004:3306"
-      command: mysqld --character-set-server=utf8 --collation-server=utf8_general_ci
-      networks:
-        - app-net
-
+    ports:
+      - "80:80"
+    networks:
+      - phonebook
+    depends_on:
+      - postgres_db
+  postgres_db:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: PhoneBookDatabase
+    ports:
+      - "5432:5432"
+    networks:
+      - deploy-guide-dev
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+volumes:
+  postgres-data:
