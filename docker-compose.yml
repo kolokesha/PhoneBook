@@ -42,12 +42,12 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 123
+      POSTGRES_PASSWORD: 1111
       POSTGRES_DB: PhoneBookDatabase
     ports:
       - "5432:5432"
     networks:
-      - deploy-guide-dev
+      - phonebook
     volumes:
       - postgres-data:/var/lib/postgresql/data
 volumes:

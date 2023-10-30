@@ -24,6 +24,17 @@ app.UseStaticFiles();
 app.UseRouting();
 app.MapControllers();
 
-// app.MapGet("/", () => "Hello World!");
+
+// move to "utils" mb
+// using (var scope = app.Services.CreateScope())
+// {
+//     var services = scope.ServiceProvider;
+//
+//     var context = services.GetRequiredService<PhoneBookDbContext>();
+//     if (context.Database.GetPendingMigrations().Any())
+//     {
+//         context.Database.Migrate();
+//     }
+// }
 
 app.Run();
