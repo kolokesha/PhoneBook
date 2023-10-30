@@ -1,0 +1,248 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/a1/Desktop/C#/PhoneBook/Services/Services.csproj": {}
+  },
+  "projects": {
+    "/Users/a1/Desktop/C#/PhoneBook/Entities/Entities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/a1/Desktop/C#/PhoneBook/Entities/Entities.csproj",
+        "projectName": "Entities",
+        "projectPath": "/Users/a1/Desktop/C#/PhoneBook/Entities/Entities.csproj",
+        "packagesPath": "/Users/a1/.nuget/packages/",
+        "outputPath": "/Users/a1/Desktop/C#/PhoneBook/Entities/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/a1/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/api": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0-preview3.23201.1, )"
+            },
+            "Microsoft.Data.SqlClient.SNI.runtime": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/ServiceContracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/ServiceContracts.csproj",
+        "projectName": "ServiceContracts",
+        "projectPath": "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/ServiceContracts.csproj",
+        "packagesPath": "/Users/a1/.nuget/packages/",
+        "outputPath": "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/a1/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/api": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/a1/Desktop/C#/PhoneBook/Entities/Entities.csproj": {
+                "projectPath": "/Users/a1/Desktop/C#/PhoneBook/Entities/Entities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0-preview3.23201.1, )"
+            },
+            "Microsoft.Data.SqlClient.SNI.runtime": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/a1/Desktop/C#/PhoneBook/Services/Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/a1/Desktop/C#/PhoneBook/Services/Services.csproj",
+        "projectName": "Services",
+        "projectPath": "/Users/a1/Desktop/C#/PhoneBook/Services/Services.csproj",
+        "packagesPath": "/Users/a1/.nuget/packages/",
+        "outputPath": "/Users/a1/Desktop/C#/PhoneBook/Services/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/a1/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.devexpress.com/api": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/ServiceContracts.csproj": {
+                "projectPath": "/Users/a1/Desktop/C#/PhoneBook/ServiceContracts/ServiceContracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0-preview3.23201.1, )"
+            },
+            "Microsoft.Data.SqlClient.SNI.runtime": {
+              "target": "Package",
+              "version": "[5.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.309/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/Rotativa/wkhtmltox-0.12.6-2.macos-cocoa.pkg",
+      "PackagePath": "staticwebassets/Rotativa/wkhtmltox-0.12.6-2.macos-cocoa.pkg"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/StyleSheet.css",
+      "PackagePath": "staticwebassets/StyleSheet.css"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/jquery.min.js",
+      "PackagePath": "staticwebassets/jquery.min.js"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/logo-color.png",
+      "PackagePath": "staticwebassets/logo-color.png"
+    },
+    {
+      "Id": "/Users/a1/Desktop/C#/PhoneBook/PhoneBook/wwwroot/logo-no-background.svg",
+      "PackagePath": "staticwebassets/logo-no-background.svg"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.PhoneBook.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.PhoneBook.props",
+      "PackagePath": "build\\PhoneBook.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.PhoneBook.props",
+      "PackagePath": "buildMultiTargeting\\PhoneBook.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.PhoneBook.props",
+      "PackagePath": "buildTransitive\\PhoneBook.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
