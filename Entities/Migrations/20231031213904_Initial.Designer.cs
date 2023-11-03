@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entities.Migrations
 {
     [DbContext(typeof(PhoneBookDbContext))]
-    [Migration("20231030222928_Initial")]
+    [Migration("20231031213904_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -47,7 +47,7 @@ namespace Entities.Migrations
                         new
                         {
                             CountryId = new Guid("56bf46a4-02b8-4693-a0f5-0a95e2218bdc"),
-                            CountryName = "Thailand"
+                            CountryName = "Russia"
                         },
                         new
                         {
@@ -57,12 +57,12 @@ namespace Entities.Migrations
                         new
                         {
                             CountryId = new Guid("8f30bedc-47dd-4286-8950-73d8a68e5d41"),
-                            CountryName = "Palestinian Territory"
+                            CountryName = "Canada"
                         },
                         new
                         {
                             CountryId = new Guid("501c6d33-1bbe-45f1-8fbd-2275913c6218"),
-                            CountryName = "China"
+                            CountryName = "USA"
                         });
                 });
 

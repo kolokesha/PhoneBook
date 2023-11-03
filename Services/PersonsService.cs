@@ -86,6 +86,11 @@ public class PersonsService : IPersonService
                     (!string.IsNullOrEmpty(temp.PersonEmail)
                         ? temp.PersonEmail.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
                 break;
+            case nameof(PersonResponse.CountryId):
+                matchingPersons = allPersons.Where(temp => 
+                    (!string.IsNullOrEmpty(temp.Country)
+                        ? temp.Country.Contains(searchString, StringComparison.OrdinalIgnoreCase) : true)).ToList();
+                break;
             case nameof(PersonResponse.Address):
                 matchingPersons = allPersons.Where(temp => 
                     (temp.Address == null) || temp.Address.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
