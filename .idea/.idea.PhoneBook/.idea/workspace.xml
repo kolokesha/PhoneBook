@@ -10,11 +10,16 @@
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Migrations/20231030222928_Initial.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Migrations/20231030222928_Initial.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Migrations/PhoneBookDbContextModelSnapshot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Migrations/20231031213904_Initial.Designer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Migrations/20231031213904_Initial.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Migrations/PhoneBookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Migrations/PhoneBookDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Person.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Person.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/PhoneBookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/PhoneBookDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/persons.json" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/persons.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContracts/DTO/PersonAddRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContracts/DTO/PersonAddRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContracts/DTO/PersonResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContracts/DTO/PersonResponse.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContracts/DTO/PersonUpdateRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContracts/DTO/PersonUpdateRequest.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContracts/Enums/GenderOptions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContracts/Enums/GenderOptions.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/PersonsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PersonsService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +172,8 @@
       <workItem from="1698702712243" duration="858000" />
       <workItem from="1698703586247" duration="33000" />
       <workItem from="1698703637388" duration="396000" />
-      <workItem from="1698704039832" duration="19659000" />
+      <workItem from="1698704039832" duration="20729000" />
+      <workItem from="1699442167084" duration="8390000" />
     </task>
     <servers />
   </component>

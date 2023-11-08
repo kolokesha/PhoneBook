@@ -12,7 +12,7 @@ public class Person
     [StringLength(40)]
     public string? PersonEmail{ get; set; }
     public DateTime? DateOfBirth { get; set; }
-    public string? Gender { get; set; }
+    public int? GenderId { get; set; }
     public Guid? CountryId { get; set; }
     [StringLength(200)]
     public string? Address { get; set; }

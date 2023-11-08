@@ -18,6 +18,7 @@ public class PhoneBookDbContext : DbContext
 
         modelBuilder.Entity<Country>().ToTable("Countries");
         modelBuilder.Entity<Person>().ToTable("Persons");
+        modelBuilder.Entity<Gender>().ToTable("Genders");
 
         string countriesJson = File.ReadAllText("countries.json");
         List<Country>? countries = System.Text.Json.JsonSerializer.Deserialize<List<Country>>(countriesJson);
@@ -35,6 +36,15 @@ public class PhoneBookDbContext : DbContext
             foreach (var person in persons)
             {
                 modelBuilder.Entity<Person>().HasData(person);
+            }
+        
+        string gendersJson = File.ReadAllText("genders.json");
+        List<Gender>? genders = System.Text.Json.JsonSerializer.Deserialize<List<Gender>>(gendersJson);
+
+        if (genders != null)
+            foreach (var gender in genders)
+            {
+                modelBuilder.Entity<Gender>().HasData(gender);
             }
 
         modelBuilder.Entity<Person>().Property(temp => temp.TIN)

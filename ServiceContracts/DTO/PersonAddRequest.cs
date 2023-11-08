@@ -30,7 +30,7 @@ public class PersonAddRequest
             PersonName = PersonName,
             PersonEmail = PersonEmail,
             DateOfBirth = DateOfBirth,
-            Gender = Gender.ToString(),
+            GenderId = (int)Gender,
             Address = Address,
             CountryId = CountryId,
             ReceiveNewsLetters = ReceiveNewsLetters

@@ -97,7 +97,7 @@ public class PersonsService : IPersonService
                 break;
             case nameof(PersonResponse.Gender):
                 matchingPersons = allPersons.Where(temp => 
-                    (temp.Gender == null) || temp.Gender.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+                    (temp.Gender == null) || temp.Gender.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
                 break;
             case nameof(PersonResponse.DateOfBirth):
                 matchingPersons = allPersons.Where(temp => 
@@ -139,10 +139,10 @@ public class PersonsService : IPersonService
                     allPersons.OrderByDescending(temp => 
                         temp.Age).ToList(),
                 (nameof(PersonResponse.Gender), SortOrderOptions.Asc) => 
-                    allPersons.OrderBy(temp => temp.Gender, StringComparer.OrdinalIgnoreCase).ToList(),
+                    allPersons.OrderBy(temp => temp.Gender.ToString(), StringComparer.OrdinalIgnoreCase).ToList(),
                 (nameof(PersonResponse.Gender), SortOrderOptions.Desc) => 
                     allPersons.OrderByDescending(temp => 
-                        temp.Gender, StringComparer.OrdinalIgnoreCase).ToList(),
+                        temp.Gender.ToString(), StringComparer.OrdinalIgnoreCase).ToList(),
                 (nameof(PersonResponse.Country), SortOrderOptions.Asc) => 
                     allPersons.OrderBy(temp => temp.Country, StringComparer.OrdinalIgnoreCase).ToList(),
                 (nameof(PersonResponse.Country), SortOrderOptions.Desc) => 
@@ -184,7 +184,7 @@ public class PersonsService : IPersonService
         matchingPerson.PersonName = personUpdateRequest.PersonName;
         matchingPerson.PersonEmail = personUpdateRequest.PersonEmail;
         matchingPerson.DateOfBirth = personUpdateRequest.DateOfBirth;
-        matchingPerson.Gender = personUpdateRequest.Gender.ToString();
+        matchingPerson.GenderId = (int)personUpdateRequest.Gender;
         matchingPerson.CountryId = personUpdateRequest.CountryId;
         matchingPerson.Address = personUpdateRequest.Address;
         matchingPerson.ReceiveNewsLetters = personUpdateRequest.ReceiveNewsLetters;

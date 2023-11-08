@@ -9,7 +9,7 @@ public class PersonResponse
     public string? PersonName { get; set; }
     public string? PersonEmail { get; set; }
     public DateTime? DateOfBirth { get; set; }
-    public string? Gender { get; set; }
+    public GenderOptions? Gender { get; set; }
     public Guid? CountryId { get; set; }
     public string? Country { get; set; }
     public string? Address { get; set; }
@@ -56,7 +56,8 @@ public class PersonResponse
             PersonName = PersonName,
             PersonEmail = PersonEmail,
             DateOfBirth = DateOfBirth,
-            Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions), Gender, true),
+            Gender = Gender,
+            // Gender = (GenderOptions)Enum.Parse(typeof(GenderOptions), Gender, true),
             Address = Address,
             CountryId = CountryId,
             ReceiveNewsLetters = ReceiveNewsLetters,
@@ -74,7 +75,7 @@ public static class PersonExtensions
             PersonName = person.PersonName,
             PersonEmail = person.PersonEmail,
             DateOfBirth = person.DateOfBirth,
-            Gender = person.Gender,
+            Gender = (GenderOptions?)person.GenderId,
             Address = person.Address,
             CountryId = person.CountryId,
             Age = (person.DateOfBirth != null)
