@@ -2,15 +2,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entities;
 
-public class PhoneBookDbContext : DbContext
+public class ApplicationDbContext : DbContext
 {
-    public PhoneBookDbContext(DbContextOptions<PhoneBookDbContext> options) : base (options)
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base (options)
     {
         
     }
     
-    public DbSet<Person> Persons { get; set; }
-    public DbSet<Country> Countries { get; set; }
+    public virtual DbSet<Person> Persons { get; set; }
+    public virtual DbSet<Country> Countries { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

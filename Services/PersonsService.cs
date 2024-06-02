@@ -11,10 +11,10 @@ namespace Services;
 
 public class PersonsService : IPersonService
 {
-    private readonly PhoneBookDbContext _db;
+    private readonly ApplicationDbContext _db;
     private readonly ICountriesService _countriesService;
 
-    public PersonsService(PhoneBookDbContext dbContext, ICountriesService countriesService)
+    public PersonsService(ApplicationDbContext dbContext, ICountriesService countriesService)
     {
         _db = dbContext;
         _countriesService = countriesService;
@@ -97,7 +97,7 @@ public class PersonsService : IPersonService
                 break;
             case nameof(PersonResponse.Gender):
                 matchingPersons = allPersons.Where(temp => 
-                    (temp.Gender == null) || temp.Gender.ToString().Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
+                    (temp.Gender == null) || temp.Gender.ToString()!.Contains(searchString, StringComparison.OrdinalIgnoreCase)).ToList();
                 break;
             case nameof(PersonResponse.DateOfBirth):
                 matchingPersons = allPersons.Where(temp => 
@@ -115,6 +115,12 @@ public class PersonsService : IPersonService
     {
         if (string.IsNullOrEmpty(sortBy))
             return allPersons;
+        var genders = Enum.GetNames(typeof(GenderOptions));
+        var orderMap = new Dictionary<GenderOptions, int>() {
+            { GenderOptions.Male, 1 },
+            { GenderOptions.Female, 2 },
+            { GenderOptions.Other, 3 }
+        };
         List<PersonResponse> sortedPersons = (sortBy, sortOrder)
             switch
             {
@@ -139,10 +145,9 @@ public class PersonsService : IPersonService
                     allPersons.OrderByDescending(temp => 
                         temp.Age).ToList(),
                 (nameof(PersonResponse.Gender), SortOrderOptions.Asc) => 
-                    allPersons.OrderBy(temp => temp.Gender.ToString(), StringComparer.OrdinalIgnoreCase).ToList(),
+                    allPersons.OrderBy(temp => temp.Gender).ToList(),
                 (nameof(PersonResponse.Gender), SortOrderOptions.Desc) => 
-                    allPersons.OrderByDescending(temp => 
-                        temp.Gender.ToString(), StringComparer.OrdinalIgnoreCase).ToList(),
+                    allPersons.OrderByDescending(temp => temp.Gender).ToList(),
                 (nameof(PersonResponse.Country), SortOrderOptions.Asc) => 
                     allPersons.OrderBy(temp => temp.Country, StringComparer.OrdinalIgnoreCase).ToList(),
                 (nameof(PersonResponse.Country), SortOrderOptions.Desc) => 

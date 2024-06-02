@@ -7,9 +7,9 @@ namespace Services;
 
 public class CountriesService : ICountriesService
 {
-    private readonly PhoneBookDbContext _db;
+    private readonly ApplicationDbContext _db;
 
-    public CountriesService(PhoneBookDbContext dbContext)
+    public CountriesService(ApplicationDbContext dbContext)
     {
         _db = dbContext;
     }
