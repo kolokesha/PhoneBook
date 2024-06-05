@@ -11,9 +11,9 @@ public interface IPersonsRepository
     
     Task<Person?> GetPersonByPersonId(Guid personId);
     
-    Task<Person?> GetFilteredPersons (Expression<Func<Person, bool>> predicate);
+    Task<List<Person>> GetFilteredPersons (Expression<Func<Person, bool>> predicate);
     
-    Task<Person?> DeletePersonByPersonId (Guid personId);
+    Task<bool> DeletePersonByPersonId (Guid personId);
     
     Task<Person> UpdatePerson(Person person);
 }
