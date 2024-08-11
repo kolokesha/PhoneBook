@@ -14,11 +14,13 @@ public class PersonsController : Controller
 {
     private readonly IPersonService _personsService;
     private readonly ICountriesService _countriesService;
+    private readonly ILogger<PersonsController> _logger;
 
-    public PersonsController(IPersonService personsService, ICountriesService countriesService)
+    public PersonsController(IPersonService personsService, ICountriesService countriesService, ILogger<PersonsController> logger)
     {
         _personsService = personsService;
         _countriesService = countriesService;
+        _logger = logger;
     }
 
     [Route("[action]")]
@@ -26,6 +28,11 @@ public class PersonsController : Controller
     public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName),
         SortOrderOptions sortOrder = SortOrderOptions.Asc)
     {
+        _logger.LogInformation("Index action methond of PersonsControlle");
+
+        _logger.LogDebug($"searchBy: {searchBy}, searchString: {searchString}, sortBy: {sortBy}," +
+                         $" sortOrder: {sortOrder}");
+        
         ViewBag.SearchFields = new Dictionary<string, string>()
         {
             { nameof(PersonResponse.PersonName), "Person Name" },

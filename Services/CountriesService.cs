@@ -1,5 +1,6 @@
 ﻿using Entities;
 using Microsoft.EntityFrameworkCore;
+using RepositoryContracts;
 using ServiceContracts;
 using ServiceContracts.DTO;
 
@@ -7,11 +8,11 @@ namespace Services;
 
 public class CountriesService : ICountriesService
 {
-    private readonly ApplicationDbContext _db;
+    private readonly ICountriesRepository _countriesRepository;
 
-    public CountriesService(ApplicationDbContext dbContext)
+    public CountriesService(ICountriesRepository countriesRepository)
     {
-        _db = dbContext;
+        _countriesRepository = countriesRepository;
     }
 
     public async Task<CountryResponse> AddCountry(CountryAddRequest? countryAddRequest)
@@ -26,7 +27,7 @@ public class CountriesService : ICountriesService
             throw new ArgumentException(nameof(countryAddRequest));
         }
 
-        if (await _db.Countries.CountAsync(temp => temp.CountryName == countryAddRequest.CountryName) > 0)
+        if (await _countriesRepository.GetCountryByCountryName(countryAddRequest.CountryName) != null)
         {
             throw new ArgumentException("Country name already exists");
         }
@@ -35,16 +36,15 @@ public class CountriesService : ICountriesService
 
         country.CountryId = Guid.NewGuid();
 
-        _db.Countries.Add(country);
-        await _db.SaveChangesAsync();
+        await _countriesRepository.AddCountry(country);
 
         return country.ToCountryResponse();
     }
 
     public async Task<List<CountryResponse>> GetAllCountries()
     {
-        return await _db.Countries.
-            Select(country => country.ToCountryResponse()).ToListAsync();
+        return (await _countriesRepository.GetAllCountries()).
+            Select(country => country.ToCountryResponse()).ToList();
         
     }
 
@@ -55,8 +55,8 @@ public class CountriesService : ICountriesService
             return null;
         }
 
-        Country? country_response_from_list = await _db.Countries.
-            FirstOrDefaultAsync(temp => temp.CountryId == countryId);
+        Country? country_response_from_list = await _countriesRepository.GetCountryByCountryId(countryId.Value);
+            
         if (country_response_from_list == null)
         {
             return null;

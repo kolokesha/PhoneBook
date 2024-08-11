@@ -10,17 +10,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Country.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Country.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Migrations/20231108134655_Initial.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Migrations/20231108134655_Initial.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/Migrations/PhoneBookDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Migrations/PhoneBookDbContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Entities/PhoneBookDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/ApplicationDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhoneBook/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhoneBookTests/CountriesServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/CountriesServiceTest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhoneBookTests/PersonsServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/PersonsServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBookTests/PhoneBookTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/PhoneBookTests.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBookTests/Usings.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/CountriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/CountriesService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/PersonsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PersonsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Services/Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +28,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Entities/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Users/a1/Desktop/C#/PhoneBook/Entities/Country.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Users/a1/Desktop/C#/PhoneBook/Entities/Migrations/20231108134655_Initial.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/appsettings.json" root0="FORCE_HIGHLIGHTING" />
@@ -60,7 +56,6 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.405&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -184,8 +179,18 @@
       <workItem from="1699442167084" duration="26350000" />
       <workItem from="1714675621959" duration="2467000" />
       <workItem from="1715459795645" duration="3938000" />
-      <workItem from="1716383453956" duration="5757000" />
+      <workItem from="1716383453956" duration="12430000" />
+      <workItem from="1717792388469" duration="4197000" />
     </task>
+    <task id="LOCAL-00001" summary="fix test + repository pattern">
+      <option name="closed" value="true" />
+      <created>1717365663393</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1717365663393</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +199,8 @@
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="fix test + repository pattern" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix test + repository pattern" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
