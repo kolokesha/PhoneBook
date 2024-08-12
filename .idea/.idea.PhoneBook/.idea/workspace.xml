@@ -10,11 +10,13 @@
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBookTests/CountriesServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/CountriesServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBookTests/PersonsServiceTest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/PersonsServiceTest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/CountriesService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/CountriesService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Services/PersonsService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Services/PersonsService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Entities/Entities.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Entities/Entities.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/PhoneBook.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/PhoneBook.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBookTests/PhoneBookTests.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBookTests/PhoneBookTests.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Repositories/Repositories.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Repositories/Repositories.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RepositoryContracts/RepositoryContracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RepositoryContracts/RepositoryContracts.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ServiceContracts/ServiceContracts.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ServiceContracts/ServiceContracts.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Services/Services.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Services/Services.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -181,6 +183,7 @@
       <workItem from="1715459795645" duration="3938000" />
       <workItem from="1716383453956" duration="12430000" />
       <workItem from="1717792388469" duration="4197000" />
+      <workItem from="1722427696014" duration="8899000" />
     </task>
     <task id="LOCAL-00001" summary="fix test + repository pattern">
       <option name="closed" value="true" />

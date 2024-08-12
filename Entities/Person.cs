@@ -22,4 +22,11 @@ public class Person
     [ForeignKey("CountryId")]
     public virtual Country? Country { get; set; }
 
+    public override string ToString()
+    {
+        return $"Person ID: {PersonId}, Person Name: {PersonName}, Email:{PersonEmail}," +
+               $" Date of Birth:{DateOfBirth?.ToString("MM/dd/yyyy")}, GenderID {GenderId}, CountryId {Country?.CountryName}," +
+               $"Address: {Address}";
+    }
+
 }
