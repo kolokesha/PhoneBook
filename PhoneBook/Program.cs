@@ -3,6 +3,7 @@ using Services;
 using Entities;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
+using PhoneBook.Filters.ActionFilters;
 using Repositories;
 using RepositoryContracts;
 using ServiceContracts.DTO;
@@ -18,6 +19,14 @@ builder.Host.UseSerilog((context, services, loggerConfiguration) =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddControllersWithViews(options =>
+{
+    /*options.Filters.Add<ResponseHeaderActionFilter>(5);*/
+    
+    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
+    options.Filters.Add(new ResponseHeaderActionFilter(logger, "X-Custom-Key-Global", "My-Value-Global", 2));
+});
 
 builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
 builder.Services.AddScoped<IPersonsRepository, PersonsRepository>();

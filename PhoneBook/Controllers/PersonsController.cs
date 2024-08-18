@@ -1,6 +1,9 @@
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PhoneBook.Filters.ActionFilters;
 using Rotativa.AspNetCore;
 using Rotativa.AspNetCore.Options;
 using ServiceContracts;
@@ -10,6 +13,10 @@ using ServiceContracts.Enums;
 namespace PhoneBook.Controllers;
 
 [Route("[controller]")]
+[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
+{
+    "X-Custom-Key", "Custom-Value", 3
+}, Order = 3)]
 public class PersonsController : Controller
 {
     private readonly IPersonService _personsService;
@@ -25,6 +32,11 @@ public class PersonsController : Controller
 
     [Route("[action]")]
     [Route("/")]
+    [TypeFilter(typeof(PersonsListActionFilter), Order = 4)]
+    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
+    {
+        "X-Custom-Key", "Custom-Value", 1 
+    }, Order = 1)]
     public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName),
         SortOrderOptions sortOrder = SortOrderOptions.Asc)
     {
@@ -33,28 +45,18 @@ public class PersonsController : Controller
         _logger.LogDebug($"searchBy: {searchBy}, searchString: {searchString}, sortBy: {sortBy}," +
                          $" sortOrder: {sortOrder}");
         
-        ViewBag.SearchFields = new Dictionary<string, string>()
-        {
-            { nameof(PersonResponse.PersonName), "Person Name" },
-            { nameof(PersonResponse.PersonEmail), "Email" },
-            { nameof(PersonResponse.DateOfBirth), "Date of Birth" },
-            { nameof(PersonResponse.Gender), "Gender" },
-            { nameof(PersonResponse.CountryId), "Country" },
-            { nameof(PersonResponse.Address), "Address" },
-            { nameof(PersonResponse.ReceiveNewsLetters), "Receive News Letters" },
-        };
         List<PersonResponse> persons = await _personsService.GetFilteredPersons(searchBy, searchString);
-        ViewBag.CurrentSearchBy = searchBy;
-        ViewBag.CurrentSearchString = searchString;
 
         List<PersonResponse> sortedPersons = await _personsService.GetSortedPersons(persons, sortBy, sortOrder);
-        ViewBag.CurrentSortBy = sortBy;
-        ViewBag.CurrentSortOrder = sortOrder.ToString();
 
         return View(sortedPersons);
     }
 
     [Route("[action]")]
+    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
+    {
+        "X-Custom-Key2", "Custom-Value2"
+    })]
     [HttpGet]
     public async Task<IActionResult> Create()
     {
