@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using PhoneBook.Filters.ActionFilters;
+using PhoneBook.Filters.ActionFilters.AuthorizationFilters;
+using PhoneBook.Filters.ActionFilters.ResourceFilters;
+using PhoneBook.Filters.ResultFilters;
 using Rotativa.AspNetCore;
 using Rotativa.AspNetCore.Options;
 using ServiceContracts;
@@ -37,6 +40,7 @@ public class PersonsController : Controller
     {
         "X-Custom-Key", "Custom-Value", 1 
     }, Order = 1)]
+    [TypeFilter(typeof(PersonsListResultFilter))]
     public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName),
         SortOrderOptions sortOrder = SortOrderOptions.Asc)
     {
@@ -71,6 +75,10 @@ public class PersonsController : Controller
 
     [Route("[action]")]
     [HttpPost]
+    [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments =  
+        new object[] {false}
+    )]
+
     public async Task<IActionResult> Create(PersonAddRequest personAddRequest)
     {
         if (!ModelState.IsValid)
@@ -89,6 +97,7 @@ public class PersonsController : Controller
 
     [HttpGet]
     [Route("[action]/{personId:guid}")]
+    [TypeFilter(typeof(TokenResultFilter))]
     public async Task<IActionResult> Edit(Guid personId)
     {
         PersonResponse? personResponse = await _personsService.GetPersonByPersonId(personId);
@@ -110,6 +119,7 @@ public class PersonsController : Controller
 
     [HttpPost]
     [Route("[action]/{personId:guid}")]
+    [TypeFilter(typeof(TokenAuthorizationFilter))]
     public async Task<IActionResult> Edit(PersonUpdateRequest personUpdateRequest, Guid personId)
     {
         PersonResponse? personResponse = await _personsService.GetPersonByPersonId(personId);
