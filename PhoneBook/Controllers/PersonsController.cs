@@ -1,14 +1,11 @@
-using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using PhoneBook.Filters;
 using PhoneBook.Filters.ActionFilters;
 using PhoneBook.Filters.ActionFilters.AuthorizationFilters;
 using PhoneBook.Filters.ActionFilters.ResourceFilters;
+using PhoneBook.Filters.ExceptionFilters;
 using PhoneBook.Filters.ResultFilters;
-using Rotativa.AspNetCore;
-using Rotativa.AspNetCore.Options;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -20,6 +17,8 @@ namespace PhoneBook.Controllers;
 {
     "X-Custom-Key", "Custom-Value", 3
 }, Order = 3)]
+[TypeFilter(typeof(HandleExceptionFilter))]
+[TypeFilter(typeof(PersonsAlwaysRunResultFilter))]
 public class PersonsController : Controller
 {
     private readonly IPersonService _personsService;
@@ -35,12 +34,13 @@ public class PersonsController : Controller
 
     [Route("[action]")]
     [Route("/")]
-    [TypeFilter(typeof(PersonsListActionFilter), Order = 4)]
-    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
+    [ServiceFilter(typeof(PersonsListActionFilter), Order = 4)]
+    /*[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
     {
         "X-Custom-Key", "Custom-Value", 1 
-    }, Order = 1)]
+    }, Order = 1)]*/
     [TypeFilter(typeof(PersonsListResultFilter))]
+    [SkipFilter]
     public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName),
         SortOrderOptions sortOrder = SortOrderOptions.Asc)
     {
@@ -78,6 +78,7 @@ public class PersonsController : Controller
     [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments =  
         new object[] {false}
     )]
+    [ResponseHeaderActionFilter("my-key", "my-value", 4)]
 
     public async Task<IActionResult> Create(PersonAddRequest personAddRequest)
     {
@@ -97,7 +98,7 @@ public class PersonsController : Controller
 
     [HttpGet]
     [Route("[action]/{personId:guid}")]
-    [TypeFilter(typeof(TokenResultFilter))]
+    /*[TypeFilter(typeof(TokenResultFilter))]*/
     public async Task<IActionResult> Edit(Guid personId)
     {
         PersonResponse? personResponse = await _personsService.GetPersonByPersonId(personId);

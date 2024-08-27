@@ -25,13 +25,14 @@ builder.Services.AddControllersWithViews(options =>
     /*options.Filters.Add<ResponseHeaderActionFilter>(5);*/
     
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
-    options.Filters.Add(new ResponseHeaderActionFilter(logger, "X-Custom-Key-Global", "My-Value-Global", 2));
+    options.Filters.Add(new ResponseHeaderActionFilter("X-Custom-Key-Global", "My-Value-Global", 2));
 });
 
 builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
 builder.Services.AddScoped<IPersonsRepository, PersonsRepository>();
 builder.Services.AddScoped<ICountriesService, CountriesService>();
 builder.Services.AddScoped<IPersonService, PersonsService>();
+builder.Services.AddTransient<PersonsListActionFilter>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
