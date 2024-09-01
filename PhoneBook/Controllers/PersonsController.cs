@@ -13,10 +13,12 @@ using ServiceContracts.Enums;
 namespace PhoneBook.Controllers;
 
 [Route("[controller]")]
-[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
+/*[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
 {
     "X-Custom-Key", "Custom-Value", 3
-}, Order = 3)]
+}, Order = 3)]*/
+
+[ResponseHeaderFilterFactory("X-Custom-Key", "Custom-Value", 3)]
 [TypeFilter(typeof(HandleExceptionFilter))]
 [TypeFilter(typeof(PersonsAlwaysRunResultFilter))]
 public class PersonsController : Controller
@@ -57,10 +59,7 @@ public class PersonsController : Controller
     }
 
     [Route("[action]")]
-    [TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
-    {
-        "X-Custom-Key2", "Custom-Value2"
-    })]
+    [ResponseHeaderFilterFactory("X-Custom-Key", "Custom-Value", 3)]
     [HttpGet]
     public async Task<IActionResult> Create()
     {
@@ -78,7 +77,7 @@ public class PersonsController : Controller
     [TypeFilter(typeof(FeatureDisableResourceFilter), Arguments =  
         new object[] {false}
     )]
-    [ResponseHeaderActionFilter("my-key", "my-value", 4)]
+    [ResponseHeaderFilterFactory("my-key", "my-value", 4)]
 
     public async Task<IActionResult> Create(PersonAddRequest personAddRequest)
     {

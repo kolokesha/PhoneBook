@@ -19,13 +19,17 @@ builder.Host.UseSerilog((context, services, loggerConfiguration) =>
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<ResponseHeaderActionFilter>();
 
 builder.Services.AddControllersWithViews(options =>
 {
-    /*options.Filters.Add<ResponseHeaderActionFilter>(5);*/
-    
     var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
-    options.Filters.Add(new ResponseHeaderActionFilter("X-Custom-Key-Global", "My-Value-Global", 2));
+    options.Filters.Add(new ResponseHeaderActionFilter(logger)
+    {
+        Key = "My-Key-From-Global",
+        Value = "My-Value_From-Global",
+        Order = 2
+    });
 });
 
 builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();

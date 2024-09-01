@@ -9,8 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PhoneBook/Controllers/PersonsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Controllers/PersonsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/Filters/ActionFilters/ResponseHeaderActionFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Filters/ActionFilters/ResponseHeaderActionFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +23,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Entities/ApplicationDbContext.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/a1/Desktop/C#/PhoneBook/Entities/Country.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/a1/Desktop/C#/PhoneBook/Entities/Migrations/20231108134655_Initial.Designer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/PhoneBook/appsettings.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Users/a1/Desktop/C#/PhoneBook/Services/PersonsService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/23083bd724604e30ad95ea7b4003362cc0400/57/d03c0d6d/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6c2a6a32e56b4b6ebe9db8b715c05cb34a1600/48/7315ef28/IQueryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ef09e128f254d37b85738dbda6c77bf21c1bf01dd2ed391b1aa7f6fc3325/Type.Enum.cs" root0="SKIP_HIGHLIGHTING" />
@@ -176,7 +174,7 @@
       <workItem from="1715459795645" duration="3938000" />
       <workItem from="1716383453956" duration="12430000" />
       <workItem from="1717792388469" duration="4197000" />
-      <workItem from="1722427696014" duration="13865000" />
+      <workItem from="1722427696014" duration="38069000" />
     </task>
     <task id="LOCAL-00001" summary="fix test + repository pattern">
       <option name="closed" value="true" />
