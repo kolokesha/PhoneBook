@@ -4,6 +4,7 @@ using Entities;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
 using PhoneBook.Filters.ActionFilters;
+using PhoneBook.StartupExtensions;
 using Repositories;
 using RepositoryContracts;
 using ServiceContracts.DTO;
@@ -18,35 +19,8 @@ builder.Host.UseSerilog((context, services, loggerConfiguration) =>
 });
 
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-builder.Services.AddControllersWithViews();
-builder.Services.AddTransient<ResponseHeaderActionFilter>();
 
-builder.Services.AddControllersWithViews(options =>
-{
-    var logger = builder.Services.BuildServiceProvider().GetRequiredService<ILogger<ResponseHeaderActionFilter>>();
-    options.Filters.Add(new ResponseHeaderActionFilter(logger)
-    {
-        Key = "My-Key-From-Global",
-        Value = "My-Value_From-Global",
-        Order = 2
-    });
-});
-
-builder.Services.AddScoped<ICountriesRepository, CountriesRepository>();
-builder.Services.AddScoped<IPersonsRepository, PersonsRepository>();
-builder.Services.AddScoped<ICountriesService, CountriesService>();
-builder.Services.AddScoped<IPersonService, PersonsService>();
-builder.Services.AddTransient<PersonsListActionFilter>();
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddHttpLogging(option =>
-{
-    option.LoggingFields = HttpLoggingFields.RequestProperties | HttpLoggingFields.ResponsePropertiesAndHeaders;
-});
+builder.Services.ConfigureServices(builder.Configuration);
 var app = builder.Build();
 
 app.UseSerilogRequestLogging();

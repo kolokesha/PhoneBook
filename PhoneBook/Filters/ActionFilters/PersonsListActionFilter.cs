@@ -2,6 +2,7 @@ using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Mvc.Filters;
 using PhoneBook.Controllers;
 using ServiceContracts.DTO;
+using ServiceContracts.Enums;
 
 namespace PhoneBook.Filters.ActionFilters;
 
@@ -68,10 +69,18 @@ public class PersonsListActionFilter : IActionFilter
             {
                 personsController.ViewData["CurrentSortBy"] = Convert.ToString(parameters["CurrentSortBy"]);
             }
+            else
+            {
+                personsController.ViewData["CurrentSortBy"] = nameof(PersonResponse.PersonName);
+            }
             
             if (parameters.ContainsKey("CurrentSortOrder"))
             {
                 personsController.ViewData["CurrentSortOrder"] = Convert.ToString(parameters["CurrentSortOrder"]);
+            }
+            else
+            {
+                personsController.ViewData["CurrentSortOrder"] = nameof(SortOrderOptions.Asc);
             }
         }
         personsController.ViewBag.SearchFields = new Dictionary<string, string>()
