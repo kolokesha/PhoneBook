@@ -5,6 +5,7 @@ using EntityFrameworkCoreMock;
 using FluentAssertions;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using ServiceContracts;
 using ServiceContracts.DTO;
 using ServiceContracts.Enums;
@@ -20,8 +21,9 @@ public class PersonsServiceTest
     private readonly ICountriesService _countriesService;
     private readonly ITestOutputHelper _testOutputHelper;
     private readonly IFixture _fixture;
+    private readonly ILogger<PersonsServiceTest> _logger;
 
-    public PersonsServiceTest(ITestOutputHelper testOutputHelper)
+    public PersonsServiceTest(ITestOutputHelper testOutputHelper, ILogger<PersonsServiceTest> logger)
     {
         _fixture = new Fixture();
         var countriesInitialData = new List<Country>();
@@ -36,6 +38,7 @@ public class PersonsServiceTest
         _personService = new PersonsService(null);
         
         _testOutputHelper = testOutputHelper;
+        _logger = logger;
     }
 
     #region AddPerson

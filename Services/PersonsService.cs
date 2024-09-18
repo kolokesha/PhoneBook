@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography;
 using Entities;
+using Exceptions;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using RepositoryContracts;
@@ -174,7 +175,7 @@ public class PersonsService : IPersonService
         var matchingPerson = await _personsRepository.GetPersonByPersonId(personUpdateRequest.PersonId);
         if (matchingPerson == null)
         {
-            throw new ArgumentException("Giving person id does not exist");
+            throw new InvalidPersonIdException("Giving person id does not exist");
         }
 
         matchingPerson.PersonName = personUpdateRequest.PersonName;

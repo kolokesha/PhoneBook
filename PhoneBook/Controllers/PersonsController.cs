@@ -13,13 +13,8 @@ using ServiceContracts.Enums;
 namespace PhoneBook.Controllers;
 
 [Route("[controller]")]
-/*[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
-{
-    "X-Custom-Key", "Custom-Value", 3
-}, Order = 3)]*/
-
 [ResponseHeaderFilterFactory("X-Custom-Key", "Custom-Value", 3)]
-[TypeFilter(typeof(HandleExceptionFilter))]
+/*[TypeFilter(typeof(HandleExceptionFilter))]*/
 [TypeFilter(typeof(PersonsAlwaysRunResultFilter))]
 public class PersonsController : Controller
 {
@@ -37,10 +32,6 @@ public class PersonsController : Controller
     [Route("[action]")]
     [Route("/")]
     [ServiceFilter(typeof(PersonsListActionFilter), Order = 4)]
-    /*[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object []
-    {
-        "X-Custom-Key", "Custom-Value", 1 
-    }, Order = 1)]*/
     [TypeFilter(typeof(PersonsListResultFilter))]
     [SkipFilter]
     public async Task<IActionResult> Index(string searchBy, string? searchString, string sortBy = nameof(PersonResponse.PersonName),
@@ -130,6 +121,7 @@ public class PersonsController : Controller
 
         if (ModelState.IsValid)
         {
+            
             await _personsService.UpdatePerson(personUpdateRequest);
             return RedirectToAction("Index");
         }

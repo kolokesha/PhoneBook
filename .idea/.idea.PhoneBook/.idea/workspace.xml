@@ -9,14 +9,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Filters/ActionFilters/PersonsListActionFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Filters/ActionFilters/PersonsListActionFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Views/Persons/Create.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Views/Persons/Create.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Views/Persons/Delete.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Views/Persons/Delete.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Views/Persons/Edit.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Views/Persons/Edit.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Views/Persons/Index.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Views/Persons/Index.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/Views/Shared/_Layout.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Views/Shared/_Layout.cshtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PhoneBook/wwwroot/StyleSheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/wwwroot/StyleSheet.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/StartupExtensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/StartupExtensions/ConfigureServicesExtensions.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +31,7 @@
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Toolset" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -180,7 +173,7 @@
       <workItem from="1716383453956" duration="12430000" />
       <workItem from="1717792388469" duration="4197000" />
       <workItem from="1722427696014" duration="42888000" />
-      <workItem from="1726509956310" duration="1404000" />
+      <workItem from="1726509956310" duration="3637000" />
     </task>
     <task id="LOCAL-00001" summary="fix test + repository pattern">
       <option name="closed" value="true" />

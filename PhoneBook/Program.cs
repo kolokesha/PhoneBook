@@ -8,6 +8,7 @@ using PhoneBook.StartupExtensions;
 using Repositories;
 using RepositoryContracts;
 using ServiceContracts.DTO;
+using PhoneBook.Middleware;
 
 using Serilog;
 
@@ -28,6 +29,10 @@ app.UseSerilogRequestLogging();
 if (builder.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
+}
+else
+{
+    app.UseExceptionHandlingMiddleware();
 }
 
 app.UseHttpLogging();

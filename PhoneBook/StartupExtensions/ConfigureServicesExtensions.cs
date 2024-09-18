@@ -12,7 +12,7 @@ namespace PhoneBook.StartupExtensions;
 
 public static class ConfigureServicesExtensions
 {
-    public static void ConfigureServices(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection ConfigureServices(this IServiceCollection services, IConfiguration configuration)
     {
         services.AddControllersWithViews();
         services.AddTransient<ResponseHeaderActionFilter>();
@@ -44,5 +44,7 @@ public static class ConfigureServicesExtensions
         {
             option.LoggingFields = HttpLoggingFields.RequestProperties | HttpLoggingFields.ResponsePropertiesAndHeaders;
         });
+
+        return services;
     }
 }
