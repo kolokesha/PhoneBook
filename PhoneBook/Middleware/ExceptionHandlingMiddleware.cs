@@ -32,8 +32,10 @@ public class ExceptionHandlingMiddleware
                 _logger.LogError("{ExceptionType}, {ExceptionMessage}", e.GetType().ToString(), e.Message);
             }
 
-            httpContext.Response.StatusCode = 500;
-            await httpContext.Response.WriteAsync("Error occur");
+            /*httpContext.Response.StatusCode = 500;
+            await httpContext.Response.WriteAsync("Error occur");*/
+
+            throw;
         }
     }
 }

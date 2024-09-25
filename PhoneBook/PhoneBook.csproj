@@ -41,4 +41,8 @@
       <Folder Include="wwwroot\Rotativa\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="Pages\Home\Error.cshtml" />
+    </ItemGroup>
+
 </Project>

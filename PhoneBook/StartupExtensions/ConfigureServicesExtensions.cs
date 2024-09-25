@@ -32,7 +32,11 @@ public static class ConfigureServicesExtensions
         services.AddScoped<ICountriesRepository, CountriesRepository>();
         services.AddScoped<IPersonsRepository, PersonsRepository>();
         services.AddScoped<ICountriesService, CountriesService>();
-        services.AddScoped<IPersonService, PersonsService>();
+        services.AddScoped<IPersonGetterService, PersonsGetterService>();
+        services.AddScoped<IPersonUpdaterService, PersonsUpdaterService>();
+        services.AddScoped<IPersonDeleterService, PersonsDeleterService>();
+        services.AddScoped<IPersonSortedService, PersonsSortedService>();
+        services.AddScoped<IPersonAdderService, PersonsAdderService>();
         services.AddTransient<PersonsListActionFilter>();
 
         services.AddDbContext<ApplicationDbContext>(options =>

@@ -9,7 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2335032-2d6a-4bce-bb85-b28eb13f2553" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/PhoneBook/StartupExtensions/ConfigureServicesExtensions.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/StartupExtensions/ConfigureServicesExtensions.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PhoneBook/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/Middleware/ExceptionHandlingMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Middleware/ExceptionHandlingMiddleware.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/PhoneBook.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/PhoneBook.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PhoneBook/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/PhoneBook/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +31,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6c2a6a32e56b4b6ebe9db8b715c05cb34a1600/48/7315ef28/IQueryable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/1ef09e128f254d37b85738dbda6c77bf21c1bf01dd2ed391b1aa7f6fc3325/Type.Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4eed6e619e84073a21dd849c6c4c4ec371f6be7b02bda06df4111091c45bdd/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5515d6a3c65e99c19d1f3e78fcacd81f4e5ce574a0aba094ea935abc7cdbc2/DeveloperExceptionPageExtensions.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProblemsViewState">
@@ -173,7 +177,7 @@
       <workItem from="1716383453956" duration="12430000" />
       <workItem from="1717792388469" duration="4197000" />
       <workItem from="1722427696014" duration="42888000" />
-      <workItem from="1726509956310" duration="3637000" />
+      <workItem from="1726509956310" duration="10141000" />
     </task>
     <task id="LOCAL-00001" summary="fix test + repository pattern">
       <option name="closed" value="true" />
